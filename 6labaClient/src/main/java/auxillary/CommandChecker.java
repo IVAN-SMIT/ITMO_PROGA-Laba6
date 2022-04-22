@@ -58,22 +58,6 @@ public class CommandChecker {
                         Corrector.enter(flag);
                     }
                 }
-/*
-                if (command.trim().equals("insert_at")) {
-
-                    System.out.println("Введите индекс позиции элемента:");
-                    String index = "insert_at " + n.readLine();
-                    commandFin = new Entries().getData(index + ",");
-                    //commandFin = "insert_at 4, f, 5 6, 2022-03-26T06:43:00.413, 56, 56, 56, 56, OCEANIC, HIGH, 6.0"; //ТЕСТЫ
-                    if (!commandFin.equals("err")) {
-                        System.out.println("Ваша коллекция:\n" + commandFin +
-                                "\nВерно?\n \"1\"-да, все верно\n \"2\"-нет, ввести заново");
-                        boolean flag = true;
-                        Corrector.enter(flag);
-                    }
-                }
-
- */
         } catch (
                 Exception e) {
             e.printStackTrace();
