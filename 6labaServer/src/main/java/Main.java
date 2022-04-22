@@ -4,7 +4,6 @@ import auxiliary.IdChecker;
 import connection.ServerManager;
 import fileManager.FileManager;
 
-import java.lang.reflect.Proxy;
 import java.util.Stack;
 
 // вариант 665580
@@ -25,9 +24,12 @@ public class Main {
 
             new IdChecker();
             IdChecker.check(cityCollection);
-
+            try {
                 ServerManager server = new ServerManager(9890);
                 server.starting(cityCollection);
+            }catch (Exception e){
+                System.out.println(e +"\n =======================");break;
+            }
 
             }
         }

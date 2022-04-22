@@ -6,8 +6,10 @@ import commands.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 
 /**
@@ -47,18 +49,20 @@ public class Commander {
         if (!Objects.equals(command, "insert_at_help")){
             history.add(command);
         }
+       
+
 
         System.out.println("Распознана команда: "+command+"\nargument команды: " + argument+ "\n");
         switch (command) {
             case"help": response = new HelpCommand().run();break;
-          //  case "exit":  new ExitCommand().run(argument);break;
+            case "exit":  new SaveCommand().run();break;
             case "info":response = new InfoCommand().run(argument, cityCollection);break;
             case "3137best": pashalOchka.run(argument);break;// интересно, а что же это......
             case "history": response = new HistoryCommand().run(argument, history);break;
             case "show": response = new ShowCommand().run(argument, cityCollection);break;
             case "clear": response = new  ClearCommand().run(argument, cityCollection);break;
             case "add":  response = new AddCommand().run(argument, cityCollection);break;
-            case "save":  response = new SaveCommand().run(argument, cityCollection);break;
+            //case "save":  response = new SaveCommand().run(argument, cityCollection);break;
             case "remove_by_id":response =  new Remove_by_idCommand().run(argument, cityCollection);break;
             case "remove_last": response = new Remove_lastCommand().run(cityCollection);break;
             case "update": {response =  new UpdateCommand().run(argument, cityCollection);break;}

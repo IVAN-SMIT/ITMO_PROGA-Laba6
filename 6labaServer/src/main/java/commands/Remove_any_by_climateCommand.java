@@ -3,8 +3,8 @@ package commands;
 import City.*;
 import auxiliary.Command;
 
-import java.util.Iterator;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * Удаляет из коллекции один элемент, значение поля climate которого эквивалентно заданному (задается вручную)
@@ -14,15 +14,29 @@ public class Remove_any_by_climateCommand implements Command {
     public  String run(String argument,Stack<City> cityCollection ) throws Exception {
 
         Climate climate = null;
+        String result;
 
         try{
-             climate = Climate.getEnumByName(argument);
-
+            climate = Climate.getEnumByName(argument);
         }catch (Exception e){
-            e.printStackTrace();
             return "Введены неверные данные! Попробуйте снова. (начните с remove_any_by_climate)";
         }
-        Iterator<City> iterator = cityCollection.iterator();
+        try {
+            Stack<City> climateCollectoin = cityCollection.stream().filter((p) -> p.getClimate().equals(Climate.getEnumByName(argument))).collect(Collectors.toCollection(Stack::new));
+            cityCollection.removeAll(climateCollectoin);
+            if(climateCollectoin.size() == 0){
+                return  "Элементы со значением " + climate + " отсутсвуют!";
+            } else {
+                return  "\nУдалено элементов: " + climateCollectoin.size() +"\nСо значением поля Climate: " + climate;
+            }
+        }catch (Exception e){
+            return "Произошла ошибка!";
+        }
+    }
+
+
+    /*
+          Iterator<City> iterator = cityCollection.iterator();
             int count = 0;
             int fin = cityCollection.size();
             String result ="";
@@ -38,6 +52,5 @@ public class Remove_any_by_climateCommand implements Command {
                 result = ("Элементы со значением " + climate + " отсутсвуют!");
             }
         }
-        return result.toString();
-    }
+     */
 }

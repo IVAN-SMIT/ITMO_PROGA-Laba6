@@ -13,6 +13,6 @@ public class ExitCommand implements Command {
             throw new IllegalArgumentException("Exit не имеет аргументов!");
         }
         new Messager().println("===========by IVAN SMIT===========",true);
-      //  System.exit(0);
+        System.exit(0);
     }
 }

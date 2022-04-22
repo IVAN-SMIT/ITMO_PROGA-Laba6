@@ -2,7 +2,6 @@ package commands;
 
 import City.City;
 import auxiliary.Command;
-import auxiliary.Messager;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

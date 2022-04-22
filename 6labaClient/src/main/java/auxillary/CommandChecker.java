@@ -2,6 +2,8 @@ package auxillary;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Класс для уточнения данных, введенных пользователем

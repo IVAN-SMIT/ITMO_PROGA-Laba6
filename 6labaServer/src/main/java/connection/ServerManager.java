@@ -8,6 +8,8 @@ import java.util.Iterator;
 
 import City.*;
 import auxiliary.Commander;
+import commands.ExitCommand;
+import commands.SaveCommand;
 import fileManager.FileManager;
 
 
@@ -44,9 +46,11 @@ public class ServerManager {
 
                     if ("exit".equals(line)) {
                        new FileManager().saveCollection(cityCollection, null);
-                        break;
+                       new ExitCommand().run();
+                       break;
                     } else if ("save".equals(line)) {
-                        new FileManager().saveCollection(cityCollection, null);
+                        new SaveCommand().run(null, cityCollection);
+                       // new FileManager().saveCollection(cityCollection, null);
                     }
                 }
 

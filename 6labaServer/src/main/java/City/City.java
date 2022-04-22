@@ -57,7 +57,6 @@ public class City {
                 long carCode, Climate climate,
                 StandardOfLiving standardOfLiving) throws Exception {
 
-
         setId(id);
         setName(name);
         setCoordinates(coordinates);
@@ -68,11 +67,7 @@ public class City {
         setCarCode(carCode);
         setClimate(climate);
         setStandardOfLiving(standardOfLiving);
-
     }
-
-
-
 
     /*-------------------------------------------------------------------*/
 
@@ -173,7 +168,6 @@ public class City {
         if(governor == null){city.println("null",flag);}
         this.governor = governor;
     }
-
 
     /*--------------------------------------------------------------------*/
 

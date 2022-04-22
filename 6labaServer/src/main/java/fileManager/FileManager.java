@@ -48,14 +48,12 @@ public class FileManager {
      * @return cityCollection
      */
 
-
     public Stack<City> loadCollection(String fname) throws JsonProcessingException, FileNotFoundException {
 
         fileName = fname;
         date = java.time.LocalDateTime.now().toString();
 
         File file = new File(fileName);
-
 
         try {
             if (!file.exists()) {
@@ -67,7 +65,6 @@ public class FileManager {
         }
 
         String jsonCity = new FileManager().read(fileName);
-
 
         Stack<City> cityCollection = new Stack<>();
         mapper.registerModule(new JSR310Module());
@@ -81,10 +78,7 @@ public class FileManager {
 
         } catch (IOException y) {
             System.out.println("Файл поврежден или в нем отсутствуют элементы!");
-            //y.printStackTrace();
         }
-
-
         return cityCollection;
     }
 
@@ -116,12 +110,10 @@ public class FileManager {
                 path = fileName;
             }
 
-
             FileOutputStream fOut = new FileOutputStream(fileName);
             PrintWriter myOutWriter = new PrintWriter(fOut);
             myOutWriter.append(result);
             myOutWriter.close();
-
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -26,7 +26,8 @@ public class UpdateCommand implements Command {
                 break;
             }
         }
-                int index = cityCollection.size();
+        int index = cityCollection.size();
+
         try {
             Long id = Long.parseLong(fields[0]);
 

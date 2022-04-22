@@ -12,6 +12,10 @@ import java.util.UUID;
 public class AddCommand implements Command {
     public  String run(String argument, Stack<City> cityCollection) throws Exception {
 
+        if (argument == null) {
+            throw new IllegalArgumentException("add не имеет аргументов!");
+        }
+
         String fields[] =argument.split(", ");
         System.out.println(argument);
 
