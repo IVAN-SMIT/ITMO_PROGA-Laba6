@@ -17,6 +17,5 @@ public class HistoryCommand implements Command {
         }
         history.removeLast();
         return "Введенные команды (последние 10):"+Arrays.toString(history.toArray());
-
     }
 }

@@ -14,6 +14,5 @@ public class ShuffleCommand implements Command {
     public String run(Stack<City> cityCollection) {
         Collections.shuffle(cityCollection);
         return "Элементы перемешаны!";
-
     }
 }

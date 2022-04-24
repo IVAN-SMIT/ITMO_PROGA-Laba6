@@ -20,5 +20,4 @@ public class SaveCommand implements Command {
         System.out.println(result);
         return result;
     }
-
 }

@@ -14,7 +14,6 @@ public class Remove_any_by_climateCommand implements Command {
     public  String run(String argument,Stack<City> cityCollection ) throws Exception {
 
         Climate climate = null;
-        String result;
 
         try{
             climate = Climate.getEnumByName(argument);

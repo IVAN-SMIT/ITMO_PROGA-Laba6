@@ -20,9 +20,7 @@ public class InfoCommand implements Command {
         if (argument != null) {
             throw new IllegalArgumentException("Info не имеет аргументов!");
         }
-
         try {
-
             Calendar c = null;
             File file = new File("cityCollection");
             SimpleDateFormat format = null;
@@ -34,17 +32,14 @@ public class InfoCommand implements Command {
                 c.setTimeZone(TimeZone.getDefault());
                 format.format(c.getTime());
             }
-
             return"Тип коллекции: " + stackInfo.getClass().getSimpleName() + " \nДата создания: " +
                     format.format(c.getTime()) + "\nКоличество элементов: " + stackInfo.size();
-
         } catch (Exception e) {
             new Messager().println("Произошла ошибка!", true);
             }
         return "В коллекции отсутствуют элементы";
     }
-    
-    }
+}
     
 
 

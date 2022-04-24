@@ -46,6 +46,7 @@ public class ServerManager {
 
                     if ("exit".equals(line)) {
                        new FileManager().saveCollection(cityCollection, null);
+                       channel.close();
                        new ExitCommand().run();
                        break;
                     } else if ("save".equals(line)) {

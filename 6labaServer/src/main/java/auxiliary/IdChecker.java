@@ -32,7 +32,6 @@ public class IdChecker {
             for (int j=i+1; j<cityCollection.size(); j++) {
 
              if(Objects.equals(array[i], array[j])) {
-
                 check.println("Найдено повторение id перед позицией " + j+"\n" +
                         Arrays.toString(array)+"\n"+
                         "удалить элемент?\n"+ " \"1\"-да, элемент будет удален\n \"2\"-нет, завершить работу программы и исправить неполадки вручную", flag);

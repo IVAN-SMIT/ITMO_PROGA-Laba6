@@ -2,12 +2,8 @@ package commands;
 
 import City.*;
 import auxiliary.Command;
-import auxiliary.Corrector;
-import auxiliary.Entries;
 import auxiliary.Messager;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.Stack;
 import java.util.UUID;
@@ -56,7 +52,6 @@ public class Insert_atCommand implements Command {
                     insert.println("Добавлен элемент " + cityCollection.peek().toString() +"\nв позицию "+index, true);
                 }
                 catch (Exception e) {
-                    //e.printStackTrace();
                     insert.println("Введены неверные данные! Попробуйте снова. " +
                             "(начните с insert_at + номер желаемой позиции элемента)", true);
                     return "Введены неверные данные! Попробуйте снова. " +

@@ -20,7 +20,6 @@ public class Corrector {
             }
         }
         return validNumberEntered;
-
     }
     public static void enter(boolean flag) throws Exception {
 

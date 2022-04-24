@@ -52,7 +52,6 @@ public class FileManager {
 
         fileName = fname;
         date = java.time.LocalDateTime.now().toString();
-
         File file = new File(fileName);
 
         try {

@@ -29,7 +29,6 @@ public class Commander {
     public static String command;
     public static String response;
     public static String scriptCommand;
-
     
     public static Stack<City> readCommand(Stack<City> cityCollection) throws Exception {
 
@@ -49,8 +48,6 @@ public class Commander {
         if (!Objects.equals(command, "insert_at_help")){
             history.add(command);
         }
-       
-
 
         System.out.println("Распознана команда: "+command+"\nargument команды: " + argument+ "\n");
         switch (command) {

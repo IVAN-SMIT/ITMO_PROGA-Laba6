@@ -21,10 +21,8 @@ public class Filter_greater_than_car_codeCommand implements Command {
             try {
                 carCode = Long.parseLong(argument);
             } catch (Exception e) {
-               // e.printStackTrace();
                 return "Введены неверные данные! Попробуйте снова. (начните с filter_greater_than_car_code)";
             }
-
             int count = 0;
             int fin = cityCollection.size();
             String result ="";
@@ -42,9 +40,7 @@ public class Filter_greater_than_car_codeCommand implements Command {
         */
 
        result = cityCollection.stream().filter((p)-> p.getCarCode() >= carCode).collect(Collectors.toList()).toString();
-
         if (count == fin) {return "Элементы со значением больше " + carCode + " отсутсвуют!";}
-
             return result;
         }
     }

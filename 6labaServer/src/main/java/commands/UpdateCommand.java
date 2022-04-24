@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * Обновляет элемент коллекции по его id, согласно синтаксису
@@ -18,13 +19,12 @@ public class UpdateCommand implements Command {
         Iterator<City> iterator = cityCollection.iterator();
 
         String[] fields =argument.split(", ");
-
-        while (iterator.hasNext()) {
-            City element = iterator.next();
-            if (element.getId() == Integer.parseInt(fields[0])) {
-                iterator.remove();
-                break;
-            }
+        if (fields.length < 2){
+            return "введите id отдельной командой";
+        }
+        Stack<City> result = cityCollection.stream().filter(jopa -> jopa.getId() == (Integer.parseInt(fields[0]))).collect(Collectors.toCollection(Stack<City>::new));
+        if (result.size() != 0){
+            cityCollection.removeAll(result);
         }
         int index = cityCollection.size();
 
@@ -54,7 +54,6 @@ public class UpdateCommand implements Command {
 
 
         } catch (Exception e) {
-           // e.printStackTrace();
             return ("Введены неверные данные! Попробуйте снова. (начните с update)  \n" + e.toString());
 
         }

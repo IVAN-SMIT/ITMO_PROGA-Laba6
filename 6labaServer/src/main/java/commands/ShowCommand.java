@@ -14,7 +14,6 @@ import java.util.Iterator;
 public class ShowCommand implements Command {
     public String run(String argument, Stack<City> cityCollection) throws Exception {
         if (argument != null) {return("Show не имеет аргументов!"); }
-
     try {
         Iterator<City> iterator = cityCollection.iterator();
         if (cityCollection.size() == 0) {

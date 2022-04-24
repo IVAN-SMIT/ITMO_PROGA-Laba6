@@ -18,10 +18,7 @@ import java.util.stream.Collectors;
  */
 
 public class Remove_by_idCommand implements Command {
-
     public String run(String argument, Stack<City> cityCollection) throws Exception {
-
-
 
         try {
 

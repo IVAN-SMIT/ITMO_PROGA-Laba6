@@ -15,7 +15,6 @@ public class ClearCommand implements Command {
      if (argument != null) {
          throw new IllegalArgumentException("Clear не имеет аргументов!");
      }
-
      while (!cityCollection.empty()) {
          cityCollection.pop();
      }

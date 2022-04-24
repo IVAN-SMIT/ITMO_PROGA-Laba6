@@ -16,8 +16,14 @@ public class CommandChecker {
     public String check(String command) {
 
         BufferedReader n = new BufferedReader(new InputStreamReader(System.in));
+        String argument = null;
 
         try {
+
+            if (!(command.split(" ", 2).length == 1)) {
+                argument = command.split(" ", 2)[1];
+            }
+
                 if (command.equals("exit")) {
                     System.out.println("Завершение работы");
                     commandFin = "save";
@@ -47,10 +53,12 @@ public class CommandChecker {
                     }
                 }
 
-                if (command.trim().equals("update")) {
-                    System.out.println("Введите id элемента: ");
-                    String idUpdate = n.readLine();
-                    commandFin = new Entries().getData("update " + idUpdate + ",");
+                if (command.split(" ", 2)[0].trim().equals("update")) {
+                    if (argument == null) {
+                        System.out.println("Введите id элемента: ");
+                        String idUpdate = n.readLine();
+                        commandFin = new Entries().getData("update " + idUpdate + ",");
+                    }else commandFin = new Entries().getData("update " + argument + ",");
                     if (!commandFin.equals("err")) {
                         System.out.println("Ваша коллекция:\n" + commandFin +
                                 "\nВерно?\n \"1\"-да, все верно\n \"2\"-нет, ввести заново");

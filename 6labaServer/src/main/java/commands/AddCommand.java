@@ -2,7 +2,6 @@ package commands;
 
 import City.*;
 import auxiliary.*;
-import auxiliary.Messager;
 
 import java.time.LocalDateTime;
 import java.util.Stack;
@@ -49,13 +48,10 @@ public class AddCommand implements Command {
 
 
         }catch (Exception e) {
-            //e.printStackTrace();
             return ("Введены неверные данные! Попробуйте снова. (начните с add)  \n" + e);
-
         }
         return "Элемент успешно добавлен!";
     }
-
 
 }
 

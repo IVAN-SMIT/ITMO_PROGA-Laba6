@@ -11,7 +11,6 @@ public class Messager {
         this.msg = message;
         System.out.println(msg);
         }
-
     }
     public String getMessage(){
         System.out.println(msg);

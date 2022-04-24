@@ -55,7 +55,6 @@ public class Execute_scriptCommand implements Command {
             Commander.readCommand(cityCollection);
             result =  result + "\n\n"+ Commander.response;
         }
-
         return result;
     }
 }

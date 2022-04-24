@@ -43,7 +43,6 @@ class Main {
                     client.sendMessage(new Request(CommandChecker.commandFin));
                     CommandChecker.commandFin = null;
                 }
-
             }
         }
     }

@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 
 public class Request implements Serializable {
+
     private String command;
 
     public Request(String command){

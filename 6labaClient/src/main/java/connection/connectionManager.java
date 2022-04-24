@@ -20,6 +20,7 @@ public class connectionManager {
 
     public  Response sendMessage(Request msg) {
         if (!client.isOpen()) {
+
             System.out.println("Подключаемся к серверу...");
 
             try {
@@ -57,7 +58,7 @@ public class connectionManager {
             try {
                 client.close();
             } catch (IOException ex) {
-                System.out.println("Cannot close connection.");
+                System.out.println("Не удается разорвать сессию.");
             }
         }
 

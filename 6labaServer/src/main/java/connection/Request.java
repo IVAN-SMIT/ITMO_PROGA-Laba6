@@ -14,6 +14,7 @@ public class Request implements Serializable {
         this.command = command;
     }
 
+
     public String getCommand() {
         return this.command;
     }
